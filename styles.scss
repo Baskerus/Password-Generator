@@ -1,0 +1,144 @@
+@import "sliders", "colors", "range";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  color: $dark-blue;
+  background-color: $light-pale-blue;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 22rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+
+  background-color: #fefeff;
+  border-radius: 1rem;
+
+  box-shadow: 0 1rem 1.3rem #7a7ebe42;
+
+  h2 {
+    margin-left: 0.8rem;
+
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+
+    margin-bottom: 1.8rem;
+    span {
+      color: $strong-purple;
+    }
+  }
+
+  .display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 5rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    background-color: rgb(255, 255, 255);
+    color: $strong-purple;
+
+    box-shadow: 0rem 0.5rem 1rem rgba(25, 27, 167, 0.123);
+    border: 2px solid rgba(25, 27, 167, 0.205);
+    border-radius: 1rem;
+
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .sliders-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 19rem;
+
+    box-shadow: 0 0.5rem 1rem $light-pale-blue;
+    border-radius: 1rem;
+
+    margin-bottom: 1.5rem;
+    padding: 1rem 0rem;
+  }
+
+  .property {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 3.2rem;
+    padding: 0rem 1rem;
+
+    border-radius: 1rem;
+
+    h3 {
+      margin: 0.4rem;
+    }
+  }
+
+  .property + .active {
+    background-color: $light-pale-blue;
+  }
+
+  .password-length {
+    input {
+      margin-bottom: 1rem;
+    }
+    margin: 0rem 0rem 4.5rem 0rem;
+  }
+
+  button {
+    width: 100%;
+    height: 4.5rem;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+
+    color: white;
+    background: linear-gradient(
+      to top right,
+      rgb(112, 103, 163),
+      $strong-purple
+    );
+    box-shadow: 0.2rem 0.5rem 1rem rgba(156, 169, 204, 0.767);
+    border: none;
+    border-radius: 1rem;
+    filter: saturate(0.75);
+
+    transition: filter 0.12s;
+  }
+
+  .generate:hover {
+    filter: saturate(1.5);
+  }
+}
+
+.column-align {
+  display: flex;
+  flex-direction: column;
+}
+.row-align {
+  display: flex;
+  flex-direction: row;
+}

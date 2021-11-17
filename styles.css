@@ -1,0 +1,343 @@
+/* The switch - the box around the slider */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #5e678f;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ffffff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  background-color: #ffffff;
+}
+
+input:checked + .slider {
+  background-color: #3131c0;
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #4c7aa0;
+          box-shadow: 0 0 1px #4c7aa0;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input[type="range"] {
+  height: 21px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 0px #000000;
+          box-shadow: 0px 0px 0px #000000;
+  background: #e3e8ee;
+  border-radius: 9px;
+  border: 0px solid #010101;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-box-shadow: 0px 0px 0px #000031;
+          box-shadow: 0px 0px 0px #000031;
+  border: 0px solid #1d3aad;
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  background: #2c4e77;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -4px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #e3e8ee;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #e3e8ee;
+  border-radius: 9px;
+  border: 0px solid #010101;
+}
+
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000031;
+  border: 0px solid #1d3aad;
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  background: #2c4e77;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: #e3e8ee;
+  border: 0px solid #010101;
+  border-radius: 18px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: #e3e8ee;
+  border: 0px solid #010101;
+  border-radius: 18px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000031;
+  border: 0px solid #1d3aad;
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  background: #2c4e77;
+  cursor: pointer;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+  background: #e3e8ee;
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+  background: #e3e8ee;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  color: #2c3477;
+  background-color: #e3e8ee;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 22rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  background-color: #fefeff;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 1rem 1.3rem #7a7ebe42;
+          box-shadow: 0 1rem 1.3rem #7a7ebe42;
+}
+
+.container h2 {
+  margin-left: 0.8rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.15rem;
+  margin-bottom: 1.8rem;
+}
+
+.container h2 span {
+  color: #3131c0;
+}
+
+.container .display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  color: #3131c0;
+  -webkit-box-shadow: 0rem 0.5rem 1rem rgba(25, 27, 167, 0.123);
+          box-shadow: 0rem 0.5rem 1rem rgba(25, 27, 167, 0.123);
+  border: 2px solid rgba(25, 27, 167, 0.205);
+  border-radius: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container .sliders-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 19rem;
+  -webkit-box-shadow: 0 0.5rem 1rem #e3e8ee;
+          box-shadow: 0 0.5rem 1rem #e3e8ee;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0rem;
+}
+
+.container .property {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.2rem;
+  padding: 0rem 1rem;
+  border-radius: 1rem;
+}
+
+.container .property h3 {
+  margin: 0.4rem;
+}
+
+.container .property + .active {
+  background-color: #e3e8ee;
+}
+
+.container .password-length {
+  margin: 0rem 0rem 4.5rem 0rem;
+}
+
+.container .password-length input {
+  margin-bottom: 1rem;
+}
+
+.container button {
+  width: 100%;
+  height: 4.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  color: white;
+  background: -webkit-gradient(linear, left bottom, right top, from(#7067a3), to(#3131c0));
+  background: linear-gradient(to top right, #7067a3, #3131c0);
+  -webkit-box-shadow: 0.2rem 0.5rem 1rem rgba(156, 169, 204, 0.767);
+          box-shadow: 0.2rem 0.5rem 1rem rgba(156, 169, 204, 0.767);
+  border: none;
+  border-radius: 1rem;
+  -webkit-filter: saturate(0.75);
+          filter: saturate(0.75);
+  -webkit-transition: -webkit-filter 0.12s;
+  transition: -webkit-filter 0.12s;
+  transition: filter 0.12s;
+  transition: filter 0.12s, -webkit-filter 0.12s;
+}
+
+.container .generate:hover {
+  -webkit-filter: saturate(1.5);
+          filter: saturate(1.5);
+}
+
+.column-align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.row-align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+/*# sourceMappingURL=styles.css.map */
