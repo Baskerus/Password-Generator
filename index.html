@@ -4,52 +4,52 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/js/script.js" defer></script>
     <title>Password Generator</title>
   </head>
   <body>
     <div class="container">
       <h2><span>PASSWORD</span> GENERATOR</h2>
       <div class="display">M>LsHR-4tA3kV%fK</div>
-      <div class="properties">
-        <div class="property password-length column-align">
-          <h3>12</h3>
-          <input type="range" />
-          Password Length
+      Password Length
+      <div class="property password-length column-align">
+        <h3 id="length-display"></h3>
+        <input id="range" type="range" min="1" max="32" value="22" />
+      </div>
+      <div class="sliders-wrapper column-align">
+        <div class="property row-align">
+          Lowercase Letters
+          <label class="switch lowercaseToggle active">
+            <input onclick="toggleActiveClass()" type="checkbox" checked />
+            <span class="slider round"></span>
+          </label>
         </div>
-        <div class="sliders-wrapper column-align">
-          <div class="property row-align">
-            Uppercase Letters
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </div>
-          <div class="property row-align">
-            Lowercase Letters
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </div>
-          <div class="property row-align">
-            Numbers
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </div>
-          <div class="property row-align">
-            Symbols
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </div>
+        <div class="property row-align">
+          Uppercase Letters
+          <label class="switch uppercaseToggle">
+            <input onclick="toggleActiveClass()" type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="property row-align">
+          Numbers
+          <label class="switch numbersToggle">
+            <input onclick="toggleActiveClass()" type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="property row-align">
+          Symbols
+          <label class="switch symbolsToggle">
+            <input onclick="toggleActiveClass()" type="checkbox" />
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <button class="generate">GENERATE</button>
+
+      <button onclick="generatePassword()" class="generate">GENERATE</button>
     </div>
   </body>
 </html>

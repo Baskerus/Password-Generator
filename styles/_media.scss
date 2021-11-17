@@ -1,0 +1,18 @@
+@media (min-width: 768px) {
+  body {
+    .container {
+      width: 460px;
+      h2 {
+        margin-bottom: 2rem;
+      }
+
+      .display {
+        height: 6rem;
+        margin-bottom: 1rem;
+      }
+      input {
+        width: 23rem;
+      }
+    }
+  }
+}
