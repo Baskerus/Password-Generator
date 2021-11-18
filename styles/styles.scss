@@ -35,7 +35,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  width: 22rem;
+  width: 24rem;
   padding: 2rem 1.8rem 1.5rem 1.8rem;
 
   background-color: #fefeff;
@@ -60,9 +60,10 @@ body {
     justify-content: center;
     align-items: center;
 
-    height: 5rem;
-    width: 100%;
+    height: fit-content;
+    width: 105%;
     margin-bottom: 1.5rem;
+    padding: 1rem 1rem;
 
     background-color: rgb(255, 255, 255);
     color: $strong-purple;
@@ -71,8 +72,9 @@ body {
     border: 2px solid rgba(25, 27, 167, 0.205);
     border-radius: 1rem;
 
-    font-weight: bold;
+    font-weight: bolder;
     text-align: center;
+    word-break: break-all;
   }
 
   .sliders-wrapper {
@@ -135,10 +137,26 @@ body {
     border-radius: 1rem;
     filter: saturate(0.75);
 
-    transition: filter 0.12s;
+    transition: all 0.1s ease;
   }
 
   .generate:hover {
     filter: saturate(1.5);
+    letter-spacing: 120%;
+  }
+}
+
+.flashBlue {
+  animation: flashBlue 0.4s backwards ease;
+}
+
+@keyframes flashBlue {
+  from {
+    color: rgb(56, 56, 255);
+    transform: scale(1.2);
+  }
+  to {
+    color: $dark-blue;
+    transform: scale(1);
   }
 }

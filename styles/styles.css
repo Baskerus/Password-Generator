@@ -95,7 +95,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
   border-radius: 15px;
-  background: #2c4e77;
+  background: #2d18e7;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -4px;
@@ -196,6 +196,7 @@ input[type="range"]:focus::-ms-fill-upper {
   }
   body .container .display {
     height: 6rem;
+    width: 100%;
     margin-bottom: 1rem;
   }
   body .container input {
@@ -249,7 +250,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 22rem;
+  width: 24rem;
   padding: 2rem 1.8rem 1.5rem 1.8rem;
   background-color: #fefeff;
   border-radius: 1rem;
@@ -278,17 +279,21 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 5rem;
-  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 105%;
   margin-bottom: 1.5rem;
+  padding: 1rem 1rem;
   background-color: white;
   color: #2d18e7;
   -webkit-box-shadow: 0rem 0.5rem 1rem rgba(25, 27, 167, 0.123);
           box-shadow: 0rem 0.5rem 1rem rgba(25, 27, 167, 0.123);
   border: 2px solid rgba(25, 27, 167, 0.205);
   border-radius: 1rem;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
+  word-break: break-all;
 }
 
 .container .sliders-wrapper {
@@ -356,14 +361,44 @@ body {
   border-radius: 1rem;
   -webkit-filter: saturate(0.75);
           filter: saturate(0.75);
-  -webkit-transition: -webkit-filter 0.12s;
-  transition: -webkit-filter 0.12s;
-  transition: filter 0.12s;
-  transition: filter 0.12s, -webkit-filter 0.12s;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 .container .generate:hover {
   -webkit-filter: saturate(1.5);
           filter: saturate(1.5);
+  letter-spacing: 120%;
+}
+
+.flashBlue {
+  -webkit-animation: flashBlue 0.4s backwards ease;
+          animation: flashBlue 0.4s backwards ease;
+}
+
+@-webkit-keyframes flashBlue {
+  from {
+    color: #3838ff;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    color: #2c3477;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes flashBlue {
+  from {
+    color: #3838ff;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    color: #2c3477;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=styles.css.map */
