@@ -17,3 +17,10 @@
     }
   }
 }
+
+@media (hover: hover) {
+  .generate:hover {
+    filter: saturate(1.5);
+    letter-spacing: 120%;
+  }
+}

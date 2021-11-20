@@ -11,17 +11,20 @@
   <body>
     <div class="container">
       <h2><span>PASSWORD</span> GENERATOR</h2>
-      <div class="display" id="display">PRESS GENERATE</div>
+      <div class="display" id="display">
+        PRESS GENERATE<img src="/images/iconmonstr-clipboard-4-12.png" alt="" />
+      </div>
+
       Password Length
       <div class="property password-length column-align">
         <h3 id="length-display"></h3>
-        <input id="range" type="range" min="1" max="40" value="16" />
+        <input id="range" type="range" min="1" max="28" value="8" />
       </div>
       <div class="sliders-wrapper column-align">
         <div class="property row-align">
           Lowercase Letters
-          <label class="switch" id="lowercaseToggle">
-            <input onclick="toggleProperties()" type="checkbox" />
+          <label class="switch active" id="lowercaseToggle">
+            <input onclick="toggleProperties()" type="checkbox" checked />
             <span class="slider round"></span>
           </label>
         </div>

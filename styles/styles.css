@@ -204,11 +204,20 @@ input[type="range"]:focus::-ms-fill-upper {
   }
 }
 
+@media (hover: hover) {
+  .generate:hover {
+    -webkit-filter: saturate(1.5);
+            filter: saturate(1.5);
+    letter-spacing: 120%;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 html {
@@ -279,10 +288,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 105%;
+  width: 100%;
   margin-bottom: 1.5rem;
   padding: 1rem 1rem;
   background-color: white;
@@ -294,6 +304,15 @@ body {
   font-weight: bolder;
   text-align: center;
   word-break: break-all;
+}
+
+.container .display img {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  -webkit-filter: opacity(0.5);
+          filter: opacity(0.5);
+  cursor: pointer;
 }
 
 .container .sliders-wrapper {
@@ -363,12 +382,6 @@ body {
           filter: saturate(0.75);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
-}
-
-.container .generate:hover {
-  -webkit-filter: saturate(1.5);
-          filter: saturate(1.5);
-  letter-spacing: 120%;
 }
 
 .flashBlue {
