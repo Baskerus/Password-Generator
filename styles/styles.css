@@ -4,7 +4,7 @@
   position: relative;
   display: inline-block;
   width: 52px;
-  height: 30px;
+  height: 31px;
 }
 
 /* Hide default HTML checkbox */
@@ -198,6 +198,7 @@ input[type="range"]:focus::-ms-fill-upper {
     height: 6rem;
     width: 100%;
     margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
   body .container input {
     width: 23rem;
@@ -243,6 +244,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
+  overflow-x: hidden;
 }
 
 .container {
@@ -268,10 +270,12 @@ body {
 }
 
 .container h2 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   margin-left: 0.8rem;
+  margin-bottom: 1.8rem;
   font-size: 1.5rem;
   letter-spacing: 0.15rem;
-  margin-bottom: 1.8rem;
 }
 
 .container h2 span {
@@ -313,6 +317,25 @@ body {
   -webkit-filter: opacity(0.5);
           filter: opacity(0.5);
   cursor: pointer;
+}
+
+.container .password-strength {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0.5rem 0rem 1rem 0rem;
+  padding-bottom: 1rem;
+  width: 90%;
+  color: #5e678f;
+  border-bottom: 1px solid lightgray;
+}
+
+.container .password-strength .indicator-text {
+  margin-left: 0.5rem;
 }
 
 .container .sliders-wrapper {

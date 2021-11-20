@@ -10,9 +10,18 @@
   </head>
   <body>
     <div class="container">
-      <h2><span>PASSWORD</span> GENERATOR</h2>
-      <div class="display" id="display">
-        PRESS GENERATE<img src="/images/iconmonstr-clipboard-4-12.png" alt="" />
+      <h2>
+        <span>PASSWORD</span><br />
+        GENERATOR
+      </h2>
+      <div id="display" class="display" id="display">
+        PRESS GENERATE<img onclick="copyToClipboard();" id="copy-icon" src="/images/iconmonstr-clipboard-4-12.png" alt="" />
+      </div>
+      <div class="password-strength row-align" id="password-strength">
+        Strength:
+        <div class="strength-display">
+          <div class="indicator-text" id="indicator-text"></div>
+        </div>
       </div>
 
       Password Length

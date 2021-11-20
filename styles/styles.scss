@@ -1,5 +1,6 @@
 @import "sliders", "colors", "range", "utils", "media";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,6 +28,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
+
+  overflow-x: hidden;
 }
 
 .container {
@@ -45,12 +48,14 @@ body {
   box-shadow: 0 1rem 1.3rem #7a7ebe42;
 
   h2 {
+    align-self: flex-start;
+
     margin-left: 0.8rem;
+    margin-bottom: 1.8rem;
 
     font-size: 1.5rem;
     letter-spacing: 0.15rem;
 
-    margin-bottom: 1.8rem;
     span {
       color: $strong-purple;
     }
@@ -85,6 +90,22 @@ body {
 
       filter: opacity(0.5);
       cursor: pointer;
+    }
+  }
+
+  .password-strength {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0.5rem 0rem 1rem 0rem;
+    padding-bottom: 1rem;
+    width: 90%;
+
+    color: $pale-blue;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    .indicator-text {
+      margin-left: 0.5rem;
     }
   }
 

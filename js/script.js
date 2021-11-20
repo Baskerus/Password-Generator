@@ -5,10 +5,14 @@ const uppercaseToggle = document.querySelector("#uppercaseToggle");
 const numbersToggle = document.querySelector("#numbersToggle");
 const symbolsToggle = document.querySelector("#symbolsToggle");
 const display = document.querySelector("#display");
+const strengthIndicatorText = document.querySelector("#indicator-text");
+const displayStrength = document.querySelector("#password-strength");
+const copy = document.querySelector("#copy-icon");
 
 lengthDisplay.innerText = rangeSlider.value;
 let characters = "abcdefghijklmnopqrstuvwxyz";
 let passwordStrength = 0;
+let passwordGrade = "Medium";
 let hasLowercase = true;
 let hasUppercase = false;
 let hasNumbers = false;
@@ -55,8 +59,9 @@ function toggleProperties() {
 function generatePassword() {
   let passwordLength = rangeSlider.value;
   const generatedPassword = generateString(passwordLength);
-  display.innerHTML = `${generatedPassword}<img src="/images/iconmonstr-clipboard-4-12.png" alt="">`;
+  display.innerHTML = `${generatedPassword}<img onclick="copyToClipboard();" id="copy-icon" src="/images/iconmonstr-clipboard-4-12.png" alt="">`;
   checkPasswordStrength(generatedPassword);
+  displayPasswordStrength();
 }
 
 function generateString(length) {
@@ -67,7 +72,6 @@ function generateString(length) {
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
-
   return result;
 }
 
@@ -109,14 +113,38 @@ function checkPasswordStrength(password) {
 function gradePassword(passwordStrength, password) {
   /* Grades the password based on passwordStrength points */
   if (passwordStrength < 6 || password.length < 7) {
-    console.log("WEAK");
+    passwordGrade = "Weak";
   } else if (passwordStrength < 11) {
-    console.log("MEDIUM");
+    passwordGrade = "Medium";
   } else if (passwordStrength < 25) {
-    console.log("STRONG");
+    passwordGrade = "Strong";
   } else if (passwordStrength === 96 && password.length == 29) {
-    console.log("UNBREAKABLE");
+    passwordGrade = "Unbreakable";
   } else if (passwordStrength > 23) {
-    console.log("VERY STRONG");
+    passwordGrade = "Very Strong";
   }
+}
+
+function displayPasswordStrength() {
+  displayStrength.style.display = "flex";
+  strengthIndicatorText.innerText = passwordGrade;
+
+  switch (passwordGrade) {
+    case "Weak":
+      strengthIndicatorText.style.color = "red";
+      break;
+    case "Medium":
+      strengthIndicatorText.style.color = "orange";
+      break;
+    case "Strong":
+      strengthIndicatorText.style.color = "green";
+      break;
+    case "Very Strong":
+      strengthIndicatorText.style.color = "lightgreen";
+      break;
+  }
+}
+
+function copyToClipboard() {
+  navigator.clipboard.writeText(display.innerText);
 }
