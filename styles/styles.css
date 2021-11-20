@@ -190,6 +190,7 @@ input[type="range"]:focus::-ms-fill-upper {
 @media (min-width: 768px) {
   body .container {
     width: 460px;
+    margin: 3rem 0rem;
   }
   body .container h2 {
     margin-bottom: 2rem;
@@ -211,6 +212,45 @@ input[type="range"]:focus::-ms-fill-upper {
             filter: saturate(1.5);
     letter-spacing: 120%;
   }
+  .container .display img:hover {
+    -webkit-filter: opacity(1);
+            filter: opacity(1);
+  }
+  .container svg:hover {
+    fill: #2d18e7;
+    cursor: pointer;
+  }
+}
+
+@-webkit-keyframes flashBlue {
+  from {
+    color: #3838ff;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    color: #2c3477;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes flashBlue {
+  from {
+    color: #3838ff;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    color: #2c3477;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.flashBlue {
+  -webkit-animation: flashBlue 0.4s backwards ease;
+          animation: flashBlue 0.4s backwards ease;
 }
 
 * {
@@ -237,7 +277,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
   width: 100vw;
   color: #2c3477;
   background-color: #e3e8ee;
@@ -248,6 +287,7 @@ body {
 }
 
 .container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,6 +301,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 4rem 0rem;
   width: 24rem;
   padding: 2rem 1.8rem 1.5rem 1.8rem;
   background-color: #fefeff;
@@ -282,6 +323,12 @@ body {
   color: #2d18e7;
 }
 
+.container svg {
+  position: absolute;
+  top: 2.2rem;
+  right: 1.5rem;
+}
+
 .container .display {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -300,7 +347,7 @@ body {
   margin-bottom: 1.5rem;
   padding: 1rem 1rem;
   background-color: white;
-  color: #2d18e7;
+  color: #5e678f;
   -webkit-box-shadow: 0rem 0.5rem 1rem rgba(25, 27, 167, 0.123);
           box-shadow: 0rem 0.5rem 1rem rgba(25, 27, 167, 0.123);
   border: 2px solid rgba(25, 27, 167, 0.205);
@@ -331,7 +378,7 @@ body {
   padding-bottom: 1rem;
   width: 90%;
   color: #5e678f;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #e7e7e7;
 }
 
 .container .password-strength .indicator-text {
@@ -405,36 +452,5 @@ body {
           filter: saturate(0.75);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
-}
-
-.flashBlue {
-  -webkit-animation: flashBlue 0.4s backwards ease;
-          animation: flashBlue 0.4s backwards ease;
-}
-
-@-webkit-keyframes flashBlue {
-  from {
-    color: #3838ff;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  to {
-    color: #2c3477;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes flashBlue {
-  from {
-    color: #3838ff;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  to {
-    color: #2c3477;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
 }
 /*# sourceMappingURL=styles.css.map */

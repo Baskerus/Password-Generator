@@ -1,4 +1,4 @@
-@import "sliders", "colors", "range", "utils", "media";
+@import "sliders", "colors", "range", "utils", "media", "animation";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 * {
@@ -19,7 +19,6 @@ body {
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
   width: 100vw;
 
   color: $dark-blue;
@@ -33,12 +32,14 @@ body {
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
 
   justify-content: center;
   align-items: center;
 
+  margin: 4rem 0rem;
   width: 24rem;
   padding: 2rem 1.8rem 1.5rem 1.8rem;
 
@@ -61,6 +62,13 @@ body {
     }
   }
 
+  svg {
+    position: absolute;
+    top: 2.2rem;
+    right: 1.5rem;
+  }
+  
+
   .display {
     display: flex;
     justify-content: center;
@@ -73,7 +81,7 @@ body {
     padding: 1rem 1rem;
 
     background-color: rgb(255, 255, 255);
-    color: $strong-purple;
+    color: $pale-blue;
 
     box-shadow: 0rem 0.5rem 1rem rgba(25, 27, 167, 0.123);
     border: 2px solid rgba(25, 27, 167, 0.205);
@@ -103,7 +111,7 @@ body {
     width: 90%;
 
     color: $pale-blue;
-    border-bottom: 1px solid rgb(211, 211, 211);
+    border-bottom: 1px solid rgb(231, 231, 231);
     .indicator-text {
       margin-left: 0.5rem;
     }
@@ -170,20 +178,5 @@ body {
     filter: saturate(0.75);
 
     transition: all 0.1s ease;
-  }
-}
-
-.flashBlue {
-  animation: flashBlue 0.4s backwards ease;
-}
-
-@keyframes flashBlue {
-  from {
-    color: rgb(56, 56, 255);
-    transform: scale(1.2);
-  }
-  to {
-    color: $dark-blue;
-    transform: scale(1);
   }
 }

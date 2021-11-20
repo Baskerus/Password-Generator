@@ -62,6 +62,7 @@ function generatePassword() {
   display.innerHTML = `${generatedPassword}<img onclick="copyToClipboard();" id="copy-icon" src="/images/iconmonstr-clipboard-4-12.png" alt="">`;
   checkPasswordStrength(generatedPassword);
   displayPasswordStrength();
+  display.style.color = "rgb(45, 24, 231)";
 }
 
 function generateString(length) {

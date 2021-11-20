@@ -1,0 +1,14 @@
+@keyframes flashBlue {
+  from {
+    color: rgb(56, 56, 255);
+    transform: scale(1.2);
+  }
+  to {
+    color: $dark-blue;
+    transform: scale(1);
+  }
+}
+
+.flashBlue {
+  animation: flashBlue 0.4s backwards ease;
+}
