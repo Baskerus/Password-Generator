@@ -457,4 +457,31 @@ body {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
+
+.flashScale {
+  -webkit-animation: flashPass 0.15s;
+          animation: flashPass 0.15s;
+}
+
+@-webkit-keyframes flashPass {
+  from {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes flashPass {
+  from {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 /*# sourceMappingURL=styles.css.map */

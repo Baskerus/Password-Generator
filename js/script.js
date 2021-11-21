@@ -5,24 +5,27 @@ const uppercaseToggle = document.querySelector("#uppercaseToggle");
 const numbersToggle = document.querySelector("#numbersToggle");
 const symbolsToggle = document.querySelector("#symbolsToggle");
 const display = document.querySelector("#display");
+const passwordDisplay = document.querySelector("#password-display");
 const strengthIndicatorText = document.querySelector("#indicator-text");
 const displayStrength = document.querySelector("#password-strength");
 const copy = document.querySelector("#copy-icon");
+const generateButton = document.querySelector("#generate-btn");
 
 lengthDisplay.innerText = rangeSlider.value;
 let characters = "abcdefghijklmnopqrstuvwxyz"; //Password character set
 
 /* ----------- Listeners ----------- */
 
+generateButton.addEventListener("click", () => {
+  flashScale(generateButton);
+});
+
 /* Password length slider */
 rangeSlider.addEventListener("input", () => {
   lengthDisplay.innerText = rangeSlider.value;
 });
 rangeSlider.addEventListener("input", () => {
-  lengthDisplay.classList.add("flashBlue");
-  setTimeout(() => {
-    lengthDisplay.classList.remove("flashBlue");
-  }, 400);
+  flashTextBlue(lengthDisplay);
 });
 
 /* ----------- Functions ----------- */
@@ -53,12 +56,13 @@ function toggleProperties() {
 function generatePassword() {
   let passwordLength = rangeSlider.value;
   const generatedPassword = generateString(passwordLength);
-  display.innerHTML = `${generatedPassword}<img onclick="copyToClipboard();" id="copy-icon" src="/images/iconmonstr-clipboard-4-12.png" alt="">`;
+
+  display.innerHTML = `<div class="flashScale" id="password-display">${generatedPassword}</div><img onclick="copyToClipboard();" id="copy-icon" src="/images/iconmonstr-clipboard-4-12.png" alt="">`;
   checkPasswordStrength(generatedPassword);
   displayPasswordStrength();
   display.style.color = "rgb(45, 24, 231)";
 
-  /* Prevents a bug where it doesn't display the complete password */
+  /* Addresses a bug where it doesn't display the complete password */
   if (display.innerText.length + 1 < generatedPassword.length) {
     generatePassword();
   }
@@ -133,7 +137,13 @@ function displayPasswordStrength() {
 
 function copyToClipboard() {
   navigator.clipboard.writeText(display.innerText);
-  display.animate(
+  flashBorderBlue(display);
+}
+
+/* Animations */
+
+function flashBorderBlue(element) {
+  element.animate(
     [
       // keyframes
       { border: "2px solid blue", color: "gray" },
@@ -142,6 +152,36 @@ function copyToClipboard() {
     {
       // timing options
       duration: 100,
+      iterations: 1,
+    }
+  );
+}
+
+function flashTextBlue(element) {
+  element.animate(
+    [
+      // keyframes
+      { color: "$blue", transform: "scale(1.0)" },
+      { color: "$strong-purple", transform: "scale(1.3)" },
+    ],
+    {
+      // timing options
+      duration: 80,
+      iterations: 1,
+    }
+  );
+}
+
+function flashScale(element) {
+  element.animate(
+    [
+      // keyframes
+      { transform: "scale(1.03)" },
+      { transform: "scale(1.0)" },
+    ],
+    {
+      // timing options
+      duration: 200,
       iterations: 1,
     }
   );

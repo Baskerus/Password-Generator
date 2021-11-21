@@ -25,7 +25,8 @@
         />
       </svg>
       <div id="display" class="display" id="display">
-        PRESS GENERATE<img
+        <div id="password-display">PRESS GENERATE</div>
+        <img
           onclick="copyToClipboard();"
           id="copy-icon"
           src="/images/iconmonstr-clipboard-4-12.png"
@@ -76,7 +77,7 @@
         </div>
       </div>
 
-      <button onclick="generatePassword()" class="generate">
+      <button onclick="generatePassword()" class="generate" id="generate-btn">
         <div>GENERATE</div>
       </button>
     </div>

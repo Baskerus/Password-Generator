@@ -181,3 +181,15 @@ body {
     transition: all 0.1s ease;
   }
 }
+
+.flashScale {
+  animation: flashPass 0.15s;
+  @keyframes flashPass {
+    from {
+      transform: scale(1.15);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}
