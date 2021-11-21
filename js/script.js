@@ -10,12 +10,7 @@ const displayStrength = document.querySelector("#password-strength");
 const copy = document.querySelector("#copy-icon");
 
 lengthDisplay.innerText = rangeSlider.value;
-let characters = "abcdefghijklmnopqrstuvwxyz";
-
-let hasLowercase = true;
-let hasUppercase = false;
-let hasNumbers = false;
-let hasSymbols = false;
+let characters = "abcdefghijklmnopqrstuvwxyz"; //Password character set
 
 /* ----------- Listeners ----------- */
 
@@ -62,6 +57,11 @@ function generatePassword() {
   checkPasswordStrength(generatedPassword);
   displayPasswordStrength();
   display.style.color = "rgb(45, 24, 231)";
+
+  /* Prevents a bug where it doesn't display the complete password */
+  if (display.innerText.length + 1 < generatedPassword.length) {
+    generatePassword();
+  }
 }
 
 function generateString(length) {
@@ -89,13 +89,10 @@ function checkPasswordStrength(password) {
     passwordStrength = passwordStrength + 4;
   }
   if (symbolsToggle.classList.contains("active")) {
-    passwordStrength = passwordStrength + 8;
+    passwordStrength = passwordStrength + 7;
   }
 
   passwordStrength = passwordStrength + password.length;
-
-  console.log(passwordStrength);
-
   gradePassword(passwordStrength, password);
 }
 
@@ -103,13 +100,13 @@ function gradePassword(passwordStrength, password) {
   /* Grades the password based on passwordStrength points */
   if (passwordStrength < 12 || password.length < 7) {
     passwordGrade = "Weak";
-  } else if (passwordStrength < 18 || password.length < 9) {
+  } else if (passwordStrength < 16 || password.length < 9) {
     passwordGrade = "Medium";
-  } else if (passwordStrength < 28) {
+  } else if (passwordStrength < 29) {
     passwordGrade = "Strong";
   } else if (passwordStrength === 96 && password.length == 29) {
     passwordGrade = "Unbreakable";
-  } else if (passwordStrength > 27) {
+  } else if (passwordStrength > 29) {
     passwordGrade = "Very Strong";
   }
 }
@@ -136,4 +133,16 @@ function displayPasswordStrength() {
 
 function copyToClipboard() {
   navigator.clipboard.writeText(display.innerText);
+  display.animate(
+    [
+      // keyframes
+      { border: "2px solid blue", color: "gray" },
+      { border: "2px solid $strong-purple", color: "$strong-purple" },
+    ],
+    {
+      // timing options
+      duration: 100,
+      iterations: 1,
+    }
+  );
 }
