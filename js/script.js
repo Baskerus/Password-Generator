@@ -10,6 +10,7 @@ const strengthIndicatorText = document.querySelector("#indicator-text");
 const displayStrength = document.querySelector("#password-strength");
 const copy = document.querySelector("#copy-icon");
 const generateButton = document.querySelector("#generate-btn");
+const infoModal = document.querySelector("#info-modal");
 
 lengthDisplay.innerText = rangeSlider.value;
 let characters = "abcdefghijklmnopqrstuvwxyz"; //Password character set
@@ -26,6 +27,12 @@ rangeSlider.addEventListener("input", () => {
 });
 rangeSlider.addEventListener("input", () => {
   flashTextBlue(lengthDisplay);
+});
+
+document.addEventListener("click", () => {
+  if (event.target != infoModal && event.target.id != "info-icon") {
+    infoModal.classList.remove("active");
+  }
 });
 
 /* ----------- Functions ----------- */
@@ -138,6 +145,10 @@ function displayPasswordStrength() {
 function copyToClipboard() {
   navigator.clipboard.writeText(display.innerText);
   flashBorderBlue(display);
+}
+
+function toggleActiveClass() {
+  infoModal.classList.toggle("active");
 }
 
 /* Animations */

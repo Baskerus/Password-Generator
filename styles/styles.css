@@ -187,6 +187,12 @@ input[type="range"]:focus::-ms-fill-upper {
           flex-direction: row;
 }
 
+.active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 @media (min-width: 768px) {
   body .container {
     width: 460px;
@@ -254,6 +260,77 @@ input[type="range"]:focus::-ms-fill-upper {
 .flashBlue {
   -webkit-animation: flashBlue 0.4s backwards ease;
           animation: flashBlue 0.4s backwards ease;
+}
+
+.column-align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.row-align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.info-modal {
+  position: absolute;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 3.3rem;
+  right: 3rem;
+  width: 18rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  background-color: white;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0rem 0.5rem 1rem rgba(103, 103, 139, 0.281);
+          box-shadow: 0rem 0.5rem 1rem rgba(103, 103, 139, 0.281);
+  z-index: 99;
+}
+
+.info-modal h3 {
+  color: #2d18e7;
+  padding: 0.7rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.info-modal p {
+  padding: 1rem 0rem;
+  line-height: 1.3;
+}
+
+.info-modal ol {
+  padding: 1rem;
+}
+
+.info-modal b {
+  color: #2d18e7;
+}
+
+.info-modal img {
+  padding: 0rem 0.2rem;
 }
 
 * {
