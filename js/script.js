@@ -11,8 +11,7 @@ const copy = document.querySelector("#copy-icon");
 
 lengthDisplay.innerText = rangeSlider.value;
 let characters = "abcdefghijklmnopqrstuvwxyz";
-let passwordStrength = 0;
-let passwordGrade = "Medium";
+
 let hasLowercase = true;
 let hasUppercase = false;
 let hasNumbers = false;
@@ -81,47 +80,36 @@ function checkPasswordStrength(password) {
 
   /* Adds "points" to password strength based on toggled type of characters */
   if (lowercaseToggle.classList.contains("active")) {
-    passwordStrength = passwordStrength + 2;
+    passwordStrength = passwordStrength + 3;
   }
   if (uppercaseToggle.classList.contains("active")) {
-    passwordStrength = passwordStrength + 2;
+    passwordStrength = passwordStrength + 4;
   }
   if (numbersToggle.classList.contains("active")) {
-    passwordStrength = passwordStrength + 2;
+    passwordStrength = passwordStrength + 4;
   }
   if (symbolsToggle.classList.contains("active")) {
-    passwordStrength = passwordStrength + 2;
+    passwordStrength = passwordStrength + 8;
   }
 
-  /* Multiplies points based on password length */
-  if (password.length < 6) {
-    passwordStrength = passwordStrength * 1;
-  } else if (password.length < 7) {
-    passwordStrength = passwordStrength * 2;
-  } else if (password.length > 7 && password.length < 12) {
-    passwordStrength = passwordStrength * 3;
-  } else if (password.length > 11 && password.length < 16) {
-    passwordStrength = passwordStrength * 4;
-  } else if (password.length > 15 && password.length < 20) {
-    passwordStrength = passwordStrength * 10;
-  } else if (password.length > 19) {
-    passwordStrength = passwordStrength * 12;
-  }
+  passwordStrength = passwordStrength + password.length;
+
+  console.log(passwordStrength);
 
   gradePassword(passwordStrength, password);
 }
 
 function gradePassword(passwordStrength, password) {
   /* Grades the password based on passwordStrength points */
-  if (passwordStrength < 6 || password.length < 7) {
+  if (passwordStrength < 12 || password.length < 7) {
     passwordGrade = "Weak";
-  } else if (passwordStrength < 11) {
+  } else if (passwordStrength < 18 || password.length < 9) {
     passwordGrade = "Medium";
-  } else if (passwordStrength < 25) {
+  } else if (passwordStrength < 28) {
     passwordGrade = "Strong";
   } else if (passwordStrength === 96 && password.length == 29) {
     passwordGrade = "Unbreakable";
-  } else if (passwordStrength > 23) {
+  } else if (passwordStrength > 27) {
     passwordGrade = "Very Strong";
   }
 }

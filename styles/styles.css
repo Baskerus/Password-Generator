@@ -201,6 +201,9 @@ input[type="range"]:focus::-ms-fill-upper {
     margin-bottom: 1rem;
     font-size: 1.5rem;
   }
+  body .container .display img {
+    width: 15px !important;
+  }
   body .container input {
     width: 23rem;
   }
@@ -361,6 +364,7 @@ body {
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
+  width: 18px;
   -webkit-filter: opacity(0.5);
           filter: opacity(0.5);
   cursor: pointer;
