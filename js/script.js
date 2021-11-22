@@ -146,28 +146,21 @@ function displayPasswordStrength() {
 }
 
 function copyToClipboard() {
-
   let textArea = document.createElement("textarea");
   textArea.value = display.innerText;
   document.body.appendChild(textArea);
   textArea.select();
 
-  try {
-    let successful = document.execCommand('copy');
-    let msg = successful ? 'successful' : 'unsuccessful';
-    console.log('Copying text command was ' + msg);
-  } catch (err) {
-    console.log('Oops, unable to copy', err);
-  }
   document.body.removeChild(textArea);
-}
 
-// The following doesn't work on mobile!
+  flashBorderBlue(display);
 
-/*   if (display.innerText !== "PRESS GENERATE") {
+  // The following doesn't work on mobile!
+  if (display.innerText !== "PRESS GENERATE") {
     navigator.clipboard.writeText(display.innerText);
     flashBorderBlue(display);
-  } */
+  }
+}
 
 function toggleActiveClass(element) {
   element.classList.toggle("active");
@@ -185,10 +178,11 @@ function flashBorderBlue(element) {
         color: "gray",
       },
       {
-        border: "2px solid $strong-purple",
-        color: "$strong-purple",
+        border: "2px solid lightgray",
+        color: "blue",
       },
-    ], {
+    ],
+    {
       // timing options
       duration: 100,
       iterations: 1,
@@ -208,7 +202,8 @@ function flashTextBlue(element) {
         color: "blue",
         transform: "scale(1.3)",
       },
-    ], {
+    ],
+    {
       // timing options
       duration: 80,
       iterations: 1,
@@ -226,7 +221,8 @@ function flashScale(element) {
       {
         transform: "scale(1.0)",
       },
-    ], {
+    ],
+    {
       // timing options
       duration: 200,
       iterations: 1,
