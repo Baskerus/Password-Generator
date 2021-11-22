@@ -146,20 +146,19 @@ function displayPasswordStrength() {
 }
 
 function copyToClipboard() {
-  if (display.innerText !== "PRESS GENERATE") {
-    let textArea = document.createElement("textarea");
-    textArea.value = display.innerText;
-    document.body.appendChild(textArea);
-    textArea.select();
+  // The following doesn't work on mobile!
 
-    document.body.removeChild(textArea);
+  let textArea = document.createElement("textarea");
+  textArea.value = display.innerText;
+  document.body.appendChild(textArea);
+  textArea.select();
 
-    flashBorderBlue(display);
+  document.body.removeChild(textArea);
 
-    // The following doesn't work on mobile!
-    navigator.clipboard.writeText(display.innerText);
-    flashBorderBlue(display);
-  }
+  flashBorderBlue(display);
+
+  navigator.clipboard.writeText(display.innerText);
+  flashBorderBlue(display);
 }
 
 function toggleActiveClass(element) {
