@@ -146,17 +146,17 @@ function displayPasswordStrength() {
 }
 
 function copyToClipboard() {
-  let textArea = document.createElement("textarea");
-  textArea.value = display.innerText;
-  document.body.appendChild(textArea);
-  textArea.select();
-
-  document.body.removeChild(textArea);
-
-  flashBorderBlue(display);
-
-  // The following doesn't work on mobile!
   if (display.innerText !== "PRESS GENERATE") {
+    let textArea = document.createElement("textarea");
+    textArea.value = display.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    document.body.removeChild(textArea);
+
+    flashBorderBlue(display);
+
+    // The following doesn't work on mobile!
     navigator.clipboard.writeText(display.innerText);
     flashBorderBlue(display);
   }
