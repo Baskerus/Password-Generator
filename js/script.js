@@ -146,16 +146,15 @@ function displayPasswordStrength() {
 }
 
 function copyToClipboard() {
-  // The following doesn't work on mobile!
-
-  let textArea = document.createElement("textarea");
+  /* let textArea = document.createElement("textarea");
   textArea.value = display.innerText;
   document.body.appendChild(textArea);
   textArea.select();
+  textArea.setSelectionRange(0, 99999); 
 
   document.body.removeChild(textArea);
 
-  flashBorderBlue(display);
+  flashBorderBlue(display); */
 
   navigator.clipboard.writeText(display.innerText);
   flashBorderBlue(display);
