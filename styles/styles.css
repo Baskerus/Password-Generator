@@ -193,6 +193,11 @@ input[type="range"]:focus::-ms-fill-upper {
   display: flex !important;
 }
 
+.blur {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
 @media (min-width: 768px) {
   body .container {
     width: 460px;
@@ -257,6 +262,33 @@ input[type="range"]:focus::-ms-fill-upper {
   }
 }
 
+.flashScale {
+  -webkit-animation: flashPass 0.15s;
+          animation: flashPass 0.15s;
+}
+
+@-webkit-keyframes flashPass {
+  from {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes flashPass {
+  from {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .flashBlue {
   -webkit-animation: flashBlue 0.4s backwards ease;
           animation: flashBlue 0.4s backwards ease;
@@ -288,6 +320,11 @@ input[type="range"]:focus::-ms-fill-upper {
   display: flex !important;
 }
 
+.blur {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
 .info-modal {
   position: absolute;
   display: none;
@@ -295,9 +332,7 @@ input[type="range"]:focus::-ms-fill-upper {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  top: 3.3rem;
-  right: 3rem;
-  width: 18rem;
+  width: 21rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -358,6 +393,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100vw;
+  height: 100vh;
   color: #2c3477;
   background-color: #e3e8ee;
   font-family: "Montserrat", sans-serif;
@@ -533,32 +569,5 @@ body {
           filter: saturate(0.75);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
-}
-
-.flashScale {
-  -webkit-animation: flashPass 0.15s;
-          animation: flashPass 0.15s;
-}
-
-@-webkit-keyframes flashPass {
-  from {
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes flashPass {
-  from {
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
 }
 /*# sourceMappingURL=styles.css.map */

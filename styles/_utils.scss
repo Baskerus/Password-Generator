@@ -10,3 +10,7 @@
 .active {
   display: flex !important;
 }
+
+.blur {
+  filter: blur(2px);
+}

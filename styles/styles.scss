@@ -21,10 +21,12 @@ body {
   align-items: center;
 
   width: 100vw;
+  height: 100vh;
 
   color: $dark-blue;
   background-color: $light-pale-blue;
 
+  
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
@@ -183,14 +185,4 @@ body {
   }
 }
 
-.flashScale {
-  animation: flashPass 0.15s;
-  @keyframes flashPass {
-    from {
-      transform: scale(1.15);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-}
+

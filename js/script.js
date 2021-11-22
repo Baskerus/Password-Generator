@@ -31,6 +31,9 @@ rangeSlider.addEventListener("input", () => {
 
 document.addEventListener("click", () => {
   if (event.target != infoModal && event.target.id != "info-icon") {
+    if (infoModal.classList.contains("active")) {
+      document.querySelector(".container").classList.toggle("blur");
+    }
     infoModal.classList.remove("active");
   }
 });
@@ -147,8 +150,9 @@ function copyToClipboard() {
   flashBorderBlue(display);
 }
 
-function toggleActiveClass() {
-  infoModal.classList.toggle("active");
+function toggleActiveClass(element) {
+  element.classList.toggle("active");
+  document.querySelector(".container").classList.toggle("blur");
 }
 
 /* Animations */
