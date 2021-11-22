@@ -1,9 +1,7 @@
+// Elements
+const body = document.querySelector("#body");
 const rangeSlider = document.querySelector("#range");
 const lengthDisplay = document.querySelector("#length-display");
-const lowercaseToggle = document.querySelector("#lowercaseToggle");
-const uppercaseToggle = document.querySelector("#uppercaseToggle");
-const numbersToggle = document.querySelector("#numbersToggle");
-const symbolsToggle = document.querySelector("#symbolsToggle");
 const display = document.querySelector("#display");
 const passwordDisplay = document.querySelector("#password-display");
 const strengthIndicatorText = document.querySelector("#indicator-text");
@@ -12,10 +10,38 @@ const copy = document.querySelector("#copy-icon");
 const generateButton = document.querySelector("#generate-btn");
 const infoModal = document.querySelector("#info-modal");
 
+// Content toggles
+const lowercaseToggle = document.querySelector("#lowercaseToggle");
+const uppercaseToggle = document.querySelector("#uppercaseToggle");
+const numbersToggle = document.querySelector("#numbersToggle");
+const symbolsToggle = document.querySelector("#symbolsToggle");
+
 lengthDisplay.innerText = rangeSlider.value;
-let characters = "abcdefghijklmnopqrstuvwxyz"; //Password character set
+
+//Password character set
+let characters = "abcdefghijklmnopqrstuvwxyz";
 
 /* ----------- Listeners ----------- */
+
+window.onload = function () {
+  body.animate(
+    [
+      // keyframes
+      {
+        filter: "saturate(0)",
+        opacity: "0",
+      },
+      {
+        opacity: "1",
+      },
+    ],
+    {
+      // timing options
+      duration: 170,
+      iterations: 1,
+    }
+  );
+};
 
 generateButton.addEventListener("click", () => {
   flashScale(generateButton);
@@ -146,18 +172,10 @@ function displayPasswordStrength() {
 }
 
 function copyToClipboard() {
-  /* let textArea = document.createElement("textarea");
-  textArea.value = display.innerText;
-  document.body.appendChild(textArea);
-  textArea.select();
-  textArea.setSelectionRange(0, 99999); 
-
-  document.body.removeChild(textArea);
-
-  flashBorderBlue(display); */
-
-  navigator.clipboard.writeText(display.innerText);
-  flashBorderBlue(display);
+  if (display.innerText !== "PRESS GENERATE") {
+    navigator.clipboard.writeText(display.innerText);
+    flashBorderBlue(display);
+  }
 }
 
 function toggleActiveClass(element) {

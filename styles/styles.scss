@@ -1,22 +1,11 @@
-@import "sliders", "colors", "range", "utils", "media", "animation",
-  "info-modal";
+@import "globals", "sliders", "colors", "range", "utils", "media", "animation",
+  "footer", "info-modal";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}
-
-html {
-  font-size: clamp(13px, 4vw, 16px);
-  overflow-x: hidden;
-}
 
 body {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -40,7 +29,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  margin: 4rem 0rem;
+  margin: 4rem 0rem 2rem 0rem;
   width: 24rem;
   padding: 2rem 1.8rem 1.5rem 1.8rem;
 

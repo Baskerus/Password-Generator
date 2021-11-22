@@ -1,5 +1,18 @@
-/* The switch - the box around the slider */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+html {
+  font-size: clamp(13px, 4vw, 16px);
+  overflow-x: hidden;
+}
+
+/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
@@ -226,6 +239,9 @@ input[type="range"]:focus::-ms-fill-upper {
             filter: saturate(1.5);
     letter-spacing: 120%;
   }
+  .container {
+    margin-top: 5rem !important;
+  }
   .container .display img:hover {
     -webkit-filter: opacity(1);
             filter: opacity(1);
@@ -292,6 +308,11 @@ input[type="range"]:focus::-ms-fill-upper {
 .flashBlue {
   -webkit-animation: flashBlue 0.4s backwards ease;
           animation: flashBlue 0.4s backwards ease;
+}
+
+footer {
+  font-size: 0.8rem;
+  margin: -1rem 0rem 2rem 0rem;
 }
 
 .column-align {
@@ -368,24 +389,15 @@ input[type="range"]:focus::-ms-fill-upper {
   padding: 0rem 0.2rem;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}
-
-html {
-  font-size: clamp(13px, 4vw, 16px);
-  overflow-x: hidden;
-}
-
 body {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -416,7 +428,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 4rem 0rem;
+  margin: 4rem 0rem 2rem 0rem;
   width: 24rem;
   padding: 2rem 1.8rem 1.5rem 1.8rem;
   background-color: #fefeff;
