@@ -12,5 +12,5 @@
 }
 
 .blur {
-  filter: blur(2px);
+  filter: blur(2px) saturate(0.5);
 }

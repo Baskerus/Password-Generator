@@ -25,7 +25,6 @@ body {
   color: $dark-blue;
   background-color: $light-pale-blue;
 
-  
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
@@ -97,7 +96,7 @@ body {
       bottom: 0.5rem;
       right: 0.5rem;
 
-      width: 18px;
+      width: 13px;
 
       filter: opacity(0.5);
       cursor: pointer;
@@ -115,6 +114,7 @@ body {
 
     color: $pale-blue;
     border-bottom: 1px solid rgb(231, 231, 231);
+
     .indicator-text {
       margin-left: 0.5rem;
     }
@@ -183,5 +183,3 @@ body {
     transition: all 0.1s ease;
   }
 }
-
-

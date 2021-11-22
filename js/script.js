@@ -146,9 +146,28 @@ function displayPasswordStrength() {
 }
 
 function copyToClipboard() {
-  navigator.clipboard.writeText(display.innerText);
-  flashBorderBlue(display);
+
+  let textArea = document.createElement("textarea");
+  textArea.value = display.innerText;
+  document.body.appendChild(textArea);
+  textArea.select();
+
+  try {
+    let successful = document.execCommand('copy');
+    let msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy', err);
+  }
+  document.body.removeChild(textArea);
 }
+
+// The following doesn't work on mobile!
+
+/*   if (display.innerText !== "PRESS GENERATE") {
+    navigator.clipboard.writeText(display.innerText);
+    flashBorderBlue(display);
+  } */
 
 function toggleActiveClass(element) {
   element.classList.toggle("active");
@@ -161,10 +180,15 @@ function flashBorderBlue(element) {
   element.animate(
     [
       // keyframes
-      { border: "2px solid blue", color: "gray" },
-      { border: "2px solid $strong-purple", color: "$strong-purple" },
-    ],
-    {
+      {
+        border: "2px solid blue",
+        color: "gray",
+      },
+      {
+        border: "2px solid $strong-purple",
+        color: "$strong-purple",
+      },
+    ], {
       // timing options
       duration: 100,
       iterations: 1,
@@ -176,10 +200,15 @@ function flashTextBlue(element) {
   element.animate(
     [
       // keyframes
-      { color: "$blue", transform: "scale(1.0)" },
-      { color: "$strong-purple", transform: "scale(1.3)" },
-    ],
-    {
+      {
+        color: "blue",
+        transform: "scale(1.0)",
+      },
+      {
+        color: "blue",
+        transform: "scale(1.3)",
+      },
+    ], {
       // timing options
       duration: 80,
       iterations: 1,
@@ -191,10 +220,13 @@ function flashScale(element) {
   element.animate(
     [
       // keyframes
-      { transform: "scale(1.03)" },
-      { transform: "scale(1.0)" },
-    ],
-    {
+      {
+        transform: "scale(1.03)",
+      },
+      {
+        transform: "scale(1.0)",
+      },
+    ], {
       // timing options
       duration: 200,
       iterations: 1,
